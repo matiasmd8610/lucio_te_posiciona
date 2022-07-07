@@ -1,0 +1,12 @@
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../../node_modules/aos/dist/aos.css';
+
+@import '_variables';
+@import '_global';
+@import '_header';
+@import '_footer';
+@import '_sections';

@@ -1,0 +1,112 @@
+.hero {
+    min-height: 570px;
+    background-image: url('/assets/images/hero.jpg');
+    position: relative;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: image 4s infinite alternate;
+    background-attachment: fixed, scroll;
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        display: block;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.65);
+        z-index: 1;
+    }
+
+    h1, h2 {
+        color: rgba($color: #fff, $alpha: 0.9);
+    }
+
+    h1 {
+        text-shadow: 0px 0px 7px #000000;
+        margin-bottom: 0;
+        line-height: 1;
+        &:after {
+            display: none;
+        }
+    }
+
+    h2 {
+        text-shadow: 0 0px 5px #000;
+    }
+
+    p {
+        color: #fff;
+        margin: 1rem 0;
+        font-size: 1.25rem;
+        max-width: 600px;
+        text-align: center;
+    }
+
+    &>.container {
+        z-index: 2;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        right: 0;
+        left: 0;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        padding-top: 7.5rem;
+        flex-direction: column;
+    }
+
+    &--img-profile {
+        width: 340px;
+        height: 340px;
+        border-radius: 100%;
+        overflow: hidden;
+        border: 8px solid $color-yellow;
+        position: absolute;
+        bottom: -23%;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        img {
+            object-fit: cover;
+            object-position: center center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    /* .google-ads-img {
+        position: absolute;
+        left: 6%;
+        top: 62%;
+        filter: drop-shadow(2px 4px 6px #222);
+    }
+    .seo-img {
+        position: absolute;
+        right: 2%;
+        top: 62%;
+        width: 280px;
+        filter: drop-shadow(2px 4px 6px #222);
+    } */
+}
+
+//ABOUT ME
+.about-me {
+    padding-top: 140px;
+    //background-color: #000;
+    h2 {
+        color: $color-main;
+        text-align: center;
+    }
+}
+
+
+@keyframes image {
+    0% {
+      background-image: url('/assets/images/hero.jpg');
+    }
+    100% {
+        background-image: url('/assets/images/hero_2.jpg');
+    }
+  }
