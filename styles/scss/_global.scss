@@ -16,6 +16,8 @@ h1, h2, h3, h4 {
 
 h1, h2 {
     position: relative;
+    margin-bottom: 3rem;
+    color: #3271d9;
     &:after {
         content: '';
         display: block;
@@ -44,6 +46,28 @@ h2 {
     font-size: 2rem;
     @include media-breakpoint-up(sm) {
         font-size: 2.82rem;
+    }
+}
+
+section {
+    padding: 2rem 0;
+}
+
+.intro {
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+p {
+    margin-bottom: .5rem;
+}
+
+@keyframes image {
+    0% {
+      background-image: url('/assets/images/hero.jpg');
+    }
+    100% {
+        background-image: url('/assets/images/hero_2.jpg');
     }
 }
   
