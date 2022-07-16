@@ -8,6 +8,7 @@
     animation: image 4s infinite alternate;
     background-attachment: fixed, scroll;
     padding: 0;
+
     &:after {
         content: '';
         position: absolute;
@@ -18,14 +19,17 @@
         z-index: 1;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
         color: rgba($color: #fff, $alpha: 0.9);
     }
 
     h1 {
         text-shadow: 0px 0px 7px #000000;
-        margin-bottom: 0;
+        margin-bottom: 0.1rem;
         line-height: 1;
+        font-size: 3.5rem;
+
         &:after {
             display: none;
         }
@@ -34,6 +38,7 @@
     h2 {
         text-shadow: 0 0px 5px #000;
         margin-bottom: 0.5rem;
+        font-size: 2.5rem;
     }
 
     p {
@@ -70,6 +75,7 @@
         right: 0;
         margin-left: auto;
         margin-right: auto;
+
         img {
             object-fit: cover;
             object-position: center center;
@@ -95,10 +101,11 @@
 
 //ABOUT ME
 .about-me {
-    padding-top: 140px;
+    padding-top: 11rem;
+
     //background-color: #000;
     h2 {
-        color: $color-main;
+        //color: $color-main;
         text-align: center;
     }
 }
@@ -107,11 +114,13 @@
 //QUE PUEDO OFRECERTE
 .what-offers {
     padding-top: 11rem;
+
     h2 {
         text-align: center;
     }
+
     img {
-        filter: drop-shadow(0px 0px 4px rgb(177, 177, 177));
+        filter: drop-shadow(0px 0px 2px rgb(192, 192, 192));
     }
 }
 
@@ -119,42 +128,198 @@
 .contact {
     padding-top: 170px;
 
+    &>.container {
+        max-width: 1200px;
+    }
+
     h1 {
         font-size: 3rem;
     }
+    form {
+        max-width: 650px;
+        padding: 1.5rem;
+        background-color: #f1f1f1;
+        border-radius: 8px;
 
-    .container {
-        display: flex;
-        justify-content: center;
-        form {
-            margin-top: 1rem;
-            max-width: 600px;
-            .form-group {
-                margin-bottom: 20px;
+        .form-group {
+            margin-bottom: 20px;
 
-                .form-control {
-                    border: 2px solid $color-yellow;
-                    border-radius: 10px;
-                    padding: 0.5rem 1rem;
-                    &:focus {
-                        border-color: $color-third;
-                        outline: 0;
-                        box-shadow: none;
-                    }
+            .form-control {
+                border: 2px solid $color-yellow;
+                border-radius: 6px;
+                padding: 0.5rem 1rem;
+
+                &:focus {
+                    border-color: $color-third;
+                    outline: 0;
+                    box-shadow: none;
                 }
-    
-                .help-block {
-                    color: red;
-                    font-size: 14px;
-                    padding-top: 8px;
-                    display: block;
-                }
-/*                 label {
-                    margin-bottom: 0.5rem;
-                } */
             }
-    
+
+            .help-block {
+                color: red;
+                font-size: 14px;
+                padding-top: 8px;
+                display: block;
+            }
+
         }
 
     }
-  }
+
+    .contact-info {
+        display: flex;
+        align-items: center;
+        padding-left: 2rem;
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+        i, img {
+            font-size: 2.2rem;
+            margin-right: 0.75rem;
+            color: $color-green;
+        }
+    }
+
+}
+
+//MY SERVICES
+.my-services {
+    margin-top: 8rem;
+
+    &--container {
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        padding-top: 1rem;
+
+        // base
+        .flip {
+            position: relative;
+            display: inline-block;
+
+            >.front,
+            >.back {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
+                transition-duration: 1s;
+                transition-property: transform, opacity;
+                height: 270px;
+                padding: 1.5rem;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            >.front {
+                transform: rotateY(0deg);
+                background: #f5f5f5;
+                box-shadow: 0px 0px 8px #acacac;
+                background-size: cover;
+                background-position: center center;
+                position: relative;
+                .front-content {
+                    position: relative;
+                    z-index: 2;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    height: 100%;
+                    justify-content: center;
+                }
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    position: absolute;
+                    height: 100%;
+                    z-index: 1;
+                    background-color: rgb(25, 87, 58 , 0.75);
+                    top: 0;
+                }
+                &.auditoria {
+                    background-image: url('/assets/images/auditoria.jpg');
+                }
+                &.busqueda {
+                    background-image: url('/assets/images/campania_busqueda.jpg');
+                }
+                &.ecommerce {
+                    background-image: url('/assets/images/ecommerce.jpg');
+                }
+                &.remarketing {
+                    background-image: url('/assets/images/remarketing.jpg');
+                }
+                &.video-campaign {
+                    background-image: url('/assets/images/video_campaign.jpg');
+                }
+                &.usabilidad {
+                    background-image: url('/assets/images/usabilidad.jpg');
+                }
+                &.local-company {
+                    background-image: url('/assets/images/local_company.jpg');
+                }
+                &.google-analitycs {
+                    background-image: url('/assets/images/google_analitycs.jpg');
+                }
+                /* figure {
+                    background-color: $color-secondary;
+                    width: 80px;
+                    height: 80px;
+                    margin-bottom: 1.5rem;
+                    border-radius: 100%;
+                    padding: 1.2rem;
+                    img {
+                        filter: invert(1);
+                        object-fit: cover;
+                        height: 100%;
+                        width: 100%;
+                        object-position: center center;
+                    }
+                } */
+                .service-title {
+                    font-size: 1.75rem;
+                    font-weight: 700;
+                    color: $color-main;
+                    letter-spacing: -0.02em;
+                    text-align: center;
+                    line-height: 1.1;
+                    color: #fff;
+                }
+                .more-info {
+                    margin-top: 1rem;
+                    display: inline-block;
+                    font-weight: 700;
+                    color: $color-yellow;
+                }
+            }
+
+            >.back {
+                position: absolute;
+                opacity: 0;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                transform: rotateY(-180deg);
+                background-color: #3271d9;
+                p {
+                    color: #fff;
+                }
+            }
+
+            &:hover {
+                >.front {
+                    transform: rotateY(180deg);
+                }
+
+                >.back {
+                    opacity: 1;
+                    transform: rotateY(0deg);
+                }
+            }
+
+        }
+
+    }
+}

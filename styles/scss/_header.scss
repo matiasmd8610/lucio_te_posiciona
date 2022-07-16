@@ -18,7 +18,7 @@ header {
 
     &.sticky {
         box-shadow: 0px 0px 10px #222;
-        background: rgb(0, 0, 0, 90%);
+        background: rgb(0, 0, 0, 92%);
         position: fixed;
         z-index: 999;
 
@@ -44,7 +44,7 @@ header {
                     margin-left: 1.75rem;
                     position: relative;
 
-                    &.whatsapp {
+                    &.wsp {
                         margin-left: 2.5rem;
 
                         &::after,
@@ -58,9 +58,10 @@ header {
                         }
                     }
 
-                    &:last-child {
+                    &.in,
+                    &.ig {
                         transform: translateY(-6px);
-                        margin-left: .5rem;
+                        margin-left: .55rem;
 
                         &::after,
                         &:before {
@@ -76,6 +77,12 @@ header {
                         color: #fff;
                         font-weight: 500;
                         padding: 0.5rem 0;
+                        img {
+                            transition: opacity 0.35s ease-out;
+                            &:hover {
+                                opacity: 0.65;
+                            }
+                        }
                     }
 
                     &:after,
