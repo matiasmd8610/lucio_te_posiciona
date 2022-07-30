@@ -3,17 +3,21 @@ header {
     z-index: 7;
     position: relative;
     position: absolute;
-    background: rgb(0, 0, 0, 90%);
+    background-color: rgb(0, 0, 0, .9);
     left: 0;
     right: 0;
     top: 0;
     margin-left: auto;
     margin-right: auto;
     transition: all 0.35s ease;
-
+    
     &.header-home {
         background-color: transparent;
         box-shadow: none;
+        @include media-breakpoint-down(md) {
+            box-shadow: 0px 0px 10px #222;
+            background-color: rgb(0, 0, 0, .8) !important;
+        }
     }
 
     &.sticky {
@@ -32,20 +36,86 @@ header {
     .navbar-brand {
         img {
             transition: all 0.5s ease;
+            @include media-breakpoint-down(md) {
+                width: 96px;
+            }
+        }
+    }
+
+    .navbar-collapse {
+        @include media-breakpoint-down(md) {
+            background-color: rgb(34, 34, 34, 0.9);
+            position: absolute;
+            width: 100vw;
+            left: 0;
+            top: 88px;
+        }
+    }
+
+    .navbar-toggler {
+        min-height: 40px;
+        &:focus {
+            box-shadow: 0 0 0 0.1rem rgb(255 255 255 / 30%);
+        }
+        &:not(.collapsed) {
+            .navbar-toggler-icon {
+                span {
+                    margin: 0;
+                    &:first-child {
+                        transform: rotate(45deg);
+                    }
+
+                    &:last-child {
+                        transform: rotate(-45deg);
+                        margin-top: -1px;
+                    }
+                    
+                }
+            }
+        }
+        .navbar-toggler-icon {
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            background-image: none;
+            span {
+                display: block;
+                width: 26px;
+                height: 2px;
+                background-color: #fff;
+                margin-bottom: 8px;
+                transition: all 0.25s ease-in-out;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
         }
     }
 
     .navbar {
         .navbar-collapse {
             justify-content: flex-end;
+            /* @include media-breakpoint-down(md) {
+                padding: 1rem 0;
+            } */
 
             .navbar-nav {
+                @include media-breakpoint-down(md) {
+                    padding: 1rem 0;
+                }
                 .nav-item {
-                    margin-left: 1.75rem;
                     position: relative;
+                    margin-left: 1.75rem;
+                    @include media-breakpoint-down(md) {
+                        margin: 0;
+                        padding: 0 15px;
+                    }
 
                     &.wsp {
-                        margin-left: 2.5rem;
+                        @include media-breakpoint-up(md) {
+                            margin-left: 2.5rem;
+                        }
 
                         &::after,
                         &:before {
@@ -61,7 +131,9 @@ header {
                     &.in,
                     &.ig {
                         transform: translateY(-6px);
-                        margin-left: .55rem;
+                        @include media-breakpoint-up(md) {
+                            margin-left: .55rem;
+                        }
 
                         &::after,
                         &:before {
@@ -87,14 +159,16 @@ header {
 
                     &:after,
                     &:before {
-                        content: "";
-                        position: absolute;
-                        width: 0%;
-                        display: block;
-                        height: 1px;
-                        transition: all 0.3s ease;
-                        margin-top: 2px;
-                        transition: all 300ms ease-in;
+                        @include media-breakpoint-up(md) {
+                            content: "";
+                            position: absolute;
+                            width: 0%;
+                            display: block;
+                            height: 1px;
+                            transition: all 0.3s ease;
+                            margin-top: 2px;
+                            transition: all 300ms ease-in;
+                        }
                     }
 
                     &:after {

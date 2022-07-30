@@ -16,7 +16,8 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 	. 'Name:' . $name . '<br/>'
 	. 'comment:' . $comment . '<br/><br/>';
 	mail($toEmail, $subject, $comment, $headers);
-	$showcomment = "Su consulta ha sido enviada, nos pondremos en contacto a la brevedad.";
+	header("Location: 404.html"); //Redirect to url if form submitted
+	//$showcomment = "Su consulta ha sido enviada, nos pondremos en contacto a la brevedad.";
 } else {
 	$showcomment =  "invalid email";
 }

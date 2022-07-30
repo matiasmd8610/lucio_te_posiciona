@@ -9,6 +9,11 @@ body {
     color: $color-main;
 }
 
+.container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
 main {
     min-height: 100vh;
 }
@@ -16,13 +21,12 @@ main {
 h1, h2, h3, h4 {
     font-weight: 800;
     letter-spacing: -0.02em;
-    line-height: 1.2;
+    line-height: 1.15;
 }
 
 h1, h2 {
     position: relative;
     margin-bottom: 3rem;
-    color: #3271d9;
     &:after {
         content: '';
         display: block;
@@ -39,7 +43,8 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 2.25rem;
+    font-size: 2rem;
+    color: #3271d9;
     text-align: center;
     position: relative;
     @include media-breakpoint-up(sm) {
@@ -50,13 +55,14 @@ h1 {
 h2 {
     font-size: 1.85rem;
     color: $color-secondary;
+    text-align: center;
     @include media-breakpoint-up(sm) {
-        font-size: 2.35rem;
+        font-size: 2.25rem;
     }
 }
 
 section {
-    padding: 2rem 0;
+    padding: 3rem 0;
 }
 
 .intro {
@@ -73,7 +79,7 @@ p {
     border-radius: 30px;
     text-transform: uppercase;
     border: 0;
-    padding: 0.5rem 1.5rem;
+    padding: 0.6rem 1.5rem;
     font-weight: 600;
 
     &-primary {
@@ -93,10 +99,51 @@ a {
 
 @keyframes image {
     0% {
-      background-image: url('/assets/images/hero.jpg');
+      background-image: url('/assets/images/hero_2.jpg');
     }
     100% {
-        background-image: url('/assets/images/hero_2.jpg');
+        background-image: url('/assets/images/hero.jpg');
     }
 }
+
+
+
+@keyframes bounce-in-top {
+    0% {
+      transform: translateY(-500px);
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    38% {
+      transform: translateY(0);
+      animation-timing-function: ease-out;
+      opacity: 1;
+    }
+    55% {
+      transform: translateY(-65px);
+      animation-timing-function: ease-in;
+    }
+    72% {
+      transform: translateY(0);
+      animation-timing-function: ease-out;
+    }
+    81% {
+      transform: translateY(-28px);
+      animation-timing-function: ease-in;
+    }
+    90% {
+      transform: translateY(0);
+      animation-timing-function: ease-out;
+    }
+    95% {
+      transform: translateY(-8px);
+      animation-timing-function: ease-in;
+    }
+    100% {
+      transform: translateY(0);
+      animation-timing-function: ease-out;
+    }
+}
+  
+  
   
