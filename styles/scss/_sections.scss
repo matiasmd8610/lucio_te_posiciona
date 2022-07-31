@@ -1,6 +1,6 @@
 .hero {
     min-height: 570px;
-    background-image: url('/assets/images/hero_2.jpg');
+    background-image: url('./assets/images/hero_2.jpg');
     position: relative;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -146,7 +146,7 @@
 //NUMBERS
 .numbers {
     min-height: 300px;
-    background-image: url('../../assets/images/numbers_bg.jpg');
+    background-image: url('./assets/images/numbers_bg.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -214,15 +214,15 @@
 
 //CONTACTO
 .contact {
-    padding-top: 170px;
+    padding-top: 130px;
+    @include media-breakpoint-up(md) {
+        padding-top: 170px;
+    }
 
     &>.container {
         max-width: 1200px;
     }
 
-    h1 {
-        font-size: 3rem;
-    }
     form {
         max-width: 650px;
         padding: 1.5rem;
@@ -276,7 +276,10 @@
 
 //MY SERVICES
 .my-services {
-    margin-top: 8rem;
+    margin-top: 5rem;
+    @include media-breakpoint-up(md) {
+        margin-top: 8rem;
+    }
 
     &--container {
         display: grid;
@@ -304,10 +307,13 @@
                 transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
                 transition-duration: 1s;
                 transition-property: transform, opacity;
-                height: 270px;
+                height: 240px;
                 padding: 1.5rem;
                 border-radius: 8px;
                 overflow: hidden;
+                @include media-breakpoint-up(md) {
+                    height: 270px;
+                }
             }
 
             >.front {

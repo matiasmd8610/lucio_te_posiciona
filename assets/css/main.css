@@ -10956,10 +10956,10 @@ a:hover {
 
 @keyframes image {
   0% {
-    background-image: url("/assets/images/hero_2.jpg");
+    background-image: url("./assets/images/hero_2.jpg");
   }
   100% {
-    background-image: url("/assets/images/hero.jpg");
+    background-image: url("./assets/images/hero.jpg");
   }
 }
 @keyframes bounce-in-top {
@@ -11227,7 +11227,7 @@ footer .back-to-top i {
 
 .hero {
   min-height: 570px;
-  background-image: url("/assets/images/hero_2.jpg");
+  background-image: url("./assets/images/hero_2.jpg");
   position: relative;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -11363,7 +11363,7 @@ footer .back-to-top i {
 
 .numbers {
   min-height: 300px;
-  background-image: url("../../assets/images/numbers_bg.jpg");
+  background-image: url("./assets/images/numbers_bg.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -11435,13 +11435,15 @@ footer .back-to-top i {
 }
 
 .contact {
-  padding-top: 170px;
+  padding-top: 130px;
+}
+@media (min-width: 768px) {
+  .contact {
+    padding-top: 170px;
+  }
 }
 .contact > .container {
   max-width: 1200px;
-}
-.contact h1, .contact .h1 {
-  font-size: 3rem;
 }
 .contact form {
   max-width: 650px;
@@ -11485,7 +11487,12 @@ footer .back-to-top i {
 }
 
 .my-services {
-  margin-top: 8rem;
+  margin-top: 5rem;
+}
+@media (min-width: 768px) {
+  .my-services {
+    margin-top: 8rem;
+  }
 }
 .my-services--container {
   display: grid;
@@ -11516,10 +11523,16 @@ footer .back-to-top i {
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition-duration: 1s;
   transition-property: transform, opacity;
-  height: 270px;
+  height: 240px;
   padding: 1.5rem;
   border-radius: 8px;
   overflow: hidden;
+}
+@media (min-width: 768px) {
+  .my-services--container .flip > .front,
+.my-services--container .flip > .back {
+    height: 270px;
+  }
 }
 .my-services--container .flip > .front {
   transform: rotateY(0deg);
