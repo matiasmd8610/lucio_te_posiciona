@@ -4,16 +4,25 @@ window.addEventListener('scroll', function () {
     header.classList.toggle("sticky", window.scrollY > 0);
 });
 
+//Update copy automatically
+document.querySelector('.year-copy').innerText = new Date().getFullYear();
+
 //Detect numbers section visible on screen
 var myElement = document.querySelector('.clients');
-var bounding = myElement.getBoundingClientRect();
-var myElementHeight = myElement.offsetHeight;
-var myElementWidth = myElement.offsetWidth;
+if (myElement) {
+    var bounding = myElement.getBoundingClientRect();
+    var myElementHeight = myElement.offsetHeight;
+    var myElementWidth = myElement.offsetWidth;
 
-function elementInViewport() {
+    window.addEventListener('scroll', () => {
+        elementInViewport();
+    });
+
+}
+
+let elementInViewport = () => {
 
     var bounding = myElement.getBoundingClientRect();
-
     if (bounding.top >= -myElementHeight &&
         bounding.left >= -myElementWidth &&
         bounding.right <= (window.innerWidth || document.documentElement.clientWidth) + myElementWidth &&
@@ -25,10 +34,6 @@ function elementInViewport() {
     }
 }
 
-window.addEventListener('scroll', () => {
-    elementInViewport();
-});
-
 //CLIENTS SLIDER
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 2,
@@ -36,7 +41,7 @@ var swiper = new Swiper(".mySwiper", {
         rows: 2,
     }, */
     autoplay: {
-        delay: 1200,
+        delay: 1500,
         disableOnInteraction: false,
     },
     breakpoints: {
@@ -53,6 +58,7 @@ var swiper = new Swiper(".mySwiper", {
           spaceBetween: 50,
         },
     },
+    disable: 'mobile',
     spaceBetween: 40
     /* pagination: {
         el: ".swiper-pagination",

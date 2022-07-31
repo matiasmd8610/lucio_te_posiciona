@@ -43,12 +43,19 @@ header {
     }
 
     .navbar-collapse {
+        justify-content: flex-end;
         @include media-breakpoint-down(md) {
-            background-color: rgb(34, 34, 34, 0.9);
+            background-color: rgb(34, 34, 34, 0.95);
             position: absolute;
             width: 100vw;
-            left: 0;
+            left: -100vw;
             top: 88px;
+            //height: 0;
+            transition: left 0.5s ease-in !important;
+            display: block !important;
+            &.show {
+                left: 0;
+            }
         }
     }
 
@@ -57,7 +64,7 @@ header {
         &:focus {
             box-shadow: 0 0 0 0.1rem rgb(255 255 255 / 30%);
         }
-        &:not(.collapsed) {
+        &[aria-expanded=true] {
             .navbar-toggler-icon {
                 span {
                     margin: 0;
@@ -95,11 +102,6 @@ header {
 
     .navbar {
         .navbar-collapse {
-            justify-content: flex-end;
-            /* @include media-breakpoint-down(md) {
-                padding: 1rem 0;
-            } */
-
             .navbar-nav {
                 @include media-breakpoint-down(md) {
                     padding: 1rem 0;
