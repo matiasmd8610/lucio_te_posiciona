@@ -10875,7 +10875,7 @@ main {
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 1.15;
+  line-height: 1.1;
 }
 
 h1, .h1, h2, .h2 {
@@ -10897,7 +10897,7 @@ h1:after, .h1:after, h2:after, .h2:after {
 }
 
 h1, .h1 {
-  font-size: 2rem;
+  font-size: 2.35rem;
   color: #3271d9;
   text-align: center;
   position: relative;
@@ -10909,7 +10909,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: 1.85rem;
+  font-size: 2rem;
   color: #002071;
   text-align: center;
 }
@@ -11135,6 +11135,11 @@ header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
   font-weight: 500;
   padding: 0.5rem 0;
 }
+@media (max-width: 767.98px) {
+  header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
+    text-align: center;
+  }
+}
 header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link img {
   transition: opacity 0.35s ease-out;
 }
@@ -11189,6 +11194,7 @@ footer .container {
 footer .description {
   margin-top: 1.2rem;
   margin-bottom: 0.25rem;
+  text-align: center;
 }
 footer .description span {
   display: inline-block;
@@ -11198,6 +11204,11 @@ footer .description span {
 footer .copy {
   font-size: 0.9rem;
   text-align: center;
+}
+@media (max-width: 767.98px) {
+  footer .copy {
+    margin-top: 0.5rem;
+  }
 }
 footer .back-to-top {
   color: #fff;

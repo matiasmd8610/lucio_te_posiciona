@@ -15,6 +15,7 @@ footer {
     .description {
         margin-top: 1.2rem;
         margin-bottom: 0.25rem;
+        text-align: center;
         //color: #4385f5;
         span {
             display: inline-block;
@@ -26,7 +27,9 @@ footer {
     .copy {
         font-size: 0.9rem;
         text-align: center;
-        //margin-top: 1.25rem;
+        @include media-breakpoint-down(md) {
+            margin-top: .5rem;
+        }
     }
 
     .back-to-top {

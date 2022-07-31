@@ -151,6 +151,9 @@ header {
                         color: #fff;
                         font-weight: 500;
                         padding: 0.5rem 0;
+                        @include media-breakpoint-down(md) {
+                            text-align: center;
+                        }
                         img {
                             transition: opacity 0.35s ease-out;
                             &:hover {

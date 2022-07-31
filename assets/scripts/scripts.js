@@ -36,6 +36,7 @@ let elementInViewport = () => {
 
 //CLIENTS SLIDER
 var swiper = new Swiper(".mySwiper", {
+    disable: 'mobile',
     slidesPerView: 2,
     /* grid: {
         rows: 2,
@@ -58,7 +59,6 @@ var swiper = new Swiper(".mySwiper", {
           spaceBetween: 50,
         },
     },
-    disable: 'mobile',
     spaceBetween: 40
     /* pagination: {
         el: ".swiper-pagination",
